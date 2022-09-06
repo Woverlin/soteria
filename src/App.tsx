@@ -85,6 +85,7 @@ function App() {
         />
         <img
           src={arrowDown}
+          data-aos="fade-down"
           className="absolute w-[18px] m-auto"
           style={{ zIndex: 0, bottom: -70, left: "50%" }}
         />
@@ -227,7 +228,7 @@ function App() {
               </defs>
               <g mask="url(#mask59370484-0ad9-4f0f-b4ad-a4f7dfab5688)">
                 <image
-                  style={{ transform: `translateY(${-scroll}px)`, width: "100%" }}
+                  style={{ transform: `translateY(${-scroll/7}px)`, width: "100%" }}
                   className="overflow-hidden"
                   xlinkHref={LogoMask}></image>
               </g>
@@ -365,6 +366,7 @@ function App() {
           And more...
         </div>
       </div>
+
       <div
         className="px-[20px] xl:px-[123px] py-[70px] bg-[#070C20] border-t-[1px] border-[#2A2E40]"
         ref={teamRef}>

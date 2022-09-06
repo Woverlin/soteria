@@ -79,6 +79,8 @@
 .stake-btn:hover {
     z-index: 1;
     animation: glow 8s linear infinite;
+    border-color: transparent;
+    color: white;
 }
 
 @keyframes glow {
