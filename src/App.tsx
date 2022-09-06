@@ -28,6 +28,8 @@ import MemoLinkedin from "./components/svgr/Linkedin";
 import MemoTelegram from "./components/svgr/Telegram";
 import MemoTwitter from "./components/svgr/Twitter";
 import Teammate from "./components/Teammate";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
   let homeRef: any = useRef(null);
@@ -49,6 +51,9 @@ function App() {
   };
 
   useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
     window.addEventListener("scroll", onScroll);
   }, []);
 
@@ -130,7 +135,7 @@ function App() {
                 className="absolute w-screen overflow-hidden "
                 style={{ zIndex: 0, height: bgTopHeight }}
               />
-              <div className="z-10 flex flex-col items-center top-[100px] relative top-menu">
+              <div className="z-10 flex flex-col items-center top-[100px] relative top-menu" data-aos="fade-up">
                 <div
                   className="text-center text-[32px] cursor-pointer"
                   onClick={() => scrollTo(homeRef)}>
@@ -157,7 +162,9 @@ function App() {
                   Contact Us
                 </div>
 
-                <div className="bg-gradient-to-r w-[200px] px-[26px] py-[13px] ml-3 rounded-full from-[#B1891D] to-[#EFC659] text-[white] text-[20px] text-normal xl:mt-[80px] mt-5 cursor-pointer" onClick={()=>scrollTo(stackNowRef)}>
+                <div
+                  className="bg-gradient-to-r w-[200px] px-[26px] py-[13px] ml-3 rounded-full from-[#B1891D] to-[#EFC659] text-[white] text-[20px] text-normal xl:mt-[80px] mt-5 cursor-pointer"
+                  onClick={() => scrollTo(stackNowRef)}>
                   {" "}
                   ✧ STAKE NOW ✧
                 </div>
@@ -196,13 +203,19 @@ function App() {
           )}
         </div>
         <div className="landing-page-top-container flex flex-col xl:flex-row xl:px-[123px] xl:py-[80px] p-[10px]">
-          <div className="landing-page-top-container__left text-center pb-[108px] xl:pb-0 xl:text-left">
+          <div
+            className="landing-page-top-container__left text-center pb-[108px] xl:pb-0 xl:text-left"
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
             <div className="header-text text-[80px] xl:text-[100px]">
               <div className="font-semibold">SOTERIA</div>
               <div className="font-light leading-[60px]">TRUST</div>
             </div>
           </div>
-          <div className="landing-page-top-container__right justify-center pt- xl:justify-end">
+          <div
+            className="landing-page-top-container__right justify-center pt- xl:justify-end"
+            data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
             <svg viewBox="0 0 100 100" className="xl:w-[400px] w-[300px]">
               <defs>
                 <mask
@@ -222,7 +235,9 @@ function App() {
           </div>
         </div>
         <div className="landing-page-trusted-validating">
-          <div className="px-4 md:px-[50px] xl:px-[123px] flex flex-col  xl:flex-row items-center">
+          <div
+            className="px-4 md:px-[50px] xl:px-[123px] flex flex-col  xl:flex-row items-center"
+            data-aos="fade-up">
             <div className="font-light text-[50px] text-white xl:mr-5 pb-[50px] text-center xl:pb-0">
               Trusted Validating
             </div>
@@ -236,6 +251,7 @@ function App() {
           </div>
           <div
             className="xl:px-[313px] px-4 md:px-[50px] flex justify-center flex-col items-center pb-[106px]"
+            data-aos="fade-up"
             ref={aboutUsRef}>
             <div className="pt-[100px] text-[50px] font-medium text-white">Soteria Trust</div>
             <div className="pt-5 text-[32px] font-extralight text-white text-center">
@@ -260,10 +276,13 @@ function App() {
           className="absolute top-[100px] w-screen h-full"
           style={{ zIndex: -1 }}
         />
-        <div className="text-[50px] font-medium pt-[154px]">Why Choose Us</div>
-        <span className="pt-[20px] font-light text-[20px] text-center ">
-          Here are some reasons why you will make the best decision to choosing us
-        </span>
+        <div className="text-[50px] font-medium pt-[154px]" data-aos="fade-up">
+          <div className="text-center">Why Choose Us</div>
+          <span className="pt-[20px] font-light text-[20px] text-center ">
+            Here are some reasons why you will make the best decision to choosing us
+          </span>
+        </div>
+
         <div className="grid xl:px-[143px] xl:grid-cols-3 grid-cols-1">
           <BenefitItem
             icon={security}
@@ -306,11 +325,11 @@ function App() {
 
       <div className="xl:px-[112px] px-4 md:px-[50px] pt-[60px] xl:pt-[120px] bg-[#070C20]">
         <div className="flex xl:flex-row flex-col-reverse">
-          <div className="flex flex-1 justify-center items-center">
+          <div className="flex flex-1 justify-center items-center" data-aos="fade-up">
             <img src={Validator} className=" w-full xl:w-[500px] xl:h-[500px]" />
           </div>
-          <div className="flex flex-1 flex-col">
-            <div className="text-[50px] font-medium pb-5 text-left ">What is Validator ?</div>
+          <div className="flex flex-1 flex-col" data-aos="fade-up">
+            <div className="text-[50px] font-medium pb-5 text-left">What is Validator ?</div>
             <div className="text-[20px] font-light">
               Proof-Of-Stake blockchains rely on validators to secure the network.
               <br />
@@ -334,43 +353,52 @@ function App() {
       <StakeNow ref={stackNowRef} />
 
       <div className="landing-page-portfolio bg-[#070C20] px-4 md:px-[50px] xl:px-[123px] pt-[21px] pb-[95px]">
-        <div className="text-center font-medium text-[50px] pb-[50px]">Our Portfolio</div>
+        <div className="text-center font-medium text-[50px] pb-[50px]" data-aos="fade-up">
+          Our Portfolio
+        </div>
         <div className="grid xl:grid-cols-6 grid-cols-2 gap-5">
           {portfolioItems?.map((it: any, index: number) => (
             <PortfolioItem key={index} icon={it?.icon} />
           ))}
         </div>
-        <div className="pt-[40px] text-center text-[22px] font-normal">And more...</div>
+        <div className="pt-[40px] text-center text-[22px] font-normal" data-aos="fade-up">
+          And more...
+        </div>
       </div>
       <div
         className="px-[20px] xl:px-[123px] py-[70px] bg-[#070C20] border-t-[1px] border-[#2A2E40]"
         ref={teamRef}>
-        <div className="font-medium text-[50px] pb-5">OUR TEAM</div>
-        <div className="text-[20px] font-light pb-[60px]" style={{ width: "calc(100% - 130px)" }}>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt.
+        <div data-aos="fade-up">
+          <div className="font-medium text-[50px] pb-5">
+            OUR TEAM
+          </div>
+          <div className="text-[20px] font-light pb-[60px]" style={{ width: "calc(100% - 130px)" }}>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+            invidunt.
+          </div>
+          <Slider>
+            <Teammate
+              avatar={avt}
+              name="Name Team"
+              description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod."
+              role="CEO, Manager"
+            />
+            <Teammate
+              avatar={avt}
+              name="Name 2"
+              description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod."
+              role="CEO, Manager"
+            />
+            <Teammate
+              avatar={avt}
+              name="Name 3"
+              description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod."
+              role="CEO, Manager"
+            />
+          </Slider>
         </div>
-        <Slider>
-          <Teammate
-            avatar={avt}
-            name="Name Team"
-            description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod."
-            role="CEO, Manager"
-          />
-          <Teammate
-            avatar={avt}
-            name="Name 2"
-            description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod."
-            role="CEO, Manager"
-          />
-          <Teammate
-            avatar={avt}
-            name="Name 3"
-            description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod."
-            role="CEO, Manager"
-          />
-        </Slider>
       </div>
+
       <div ref={contactRef}>
         <Contact />
       </div>

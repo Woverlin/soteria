@@ -28,7 +28,7 @@ const StakeNow = forwardRef((_, ref: any) => {
         style={{ top: -1 }}
         className="absolute left-0 overflow-hidden h-[170px] w-full"
       />
-      <div className="pt-[200px] font-medium text-[50px] pb-[70px] text-center">STAKE NOW</div>
+      <div className="pt-[200px] font-medium text-[50px] pb-[70px] text-center" data-aos="fade-up">STAKE NOW</div>
       <div className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5  gap-5 pb-[171px]">
         {stakeItems?.map((it: any, index: number) => (
           <StakeItem key={index} data={it} />

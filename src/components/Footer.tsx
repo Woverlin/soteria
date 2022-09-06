@@ -18,13 +18,13 @@ const Footer = () => {
       className="px-[50px] xl:px-[123px] py-[80px] bg-[#070C20] gap-[66px] xl:grid text-[#ffffffd9] flex flex-col justify-center items-center xl:items-start"
       style={{ gridTemplateColumns: "1fr 2fr 1fr" }}>
       <div className="justify-between flex flex-col xl:items-start h-full">
-        <img className="h-[52px]" src={LogoText} />
+        <img className="h-[52px]" src={LogoText} data-aos="fade-up" />
         <div className="text-[16px] font-light invisible xl:visible">
           © 2019. All Rights. Reserved.
         </div>
       </div>
 
-      <div className="text-[16px] font-light">
+      <div className="text-[16px] font-light" data-aos="fade-up">
         SOTERIA is a leading blockchain infrastructure company based in Seoul, South Korea.
         <br /> <br />
         We operate state-of-the-art distributed and redundant validator infrastructure for Proof of
@@ -34,7 +34,7 @@ const Footer = () => {
         as often as every few seconds we also provide all crypto holders the opportunity to stake
         alongside us, accessing the chains’ rewards.
       </div>
-      <div className="flex flex-col justify-between h-full">
+      <div className="flex flex-col justify-between h-full" data-aos="fade-up">
         <div className="text-center pb-[40px] xl:pb-0 xl:text-left">
           <div className="text-[18px] font-light text-[#ffffff73]">Contact Us</div>
           <div className="text-[22px] font-medium">hello@SOTERIAtrust.com</div>

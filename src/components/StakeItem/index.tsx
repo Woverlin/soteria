@@ -15,7 +15,7 @@ const StackItem = ({ data }: any) => {
     stakeAPR: { nominal, realTime },
   } = data;
   return (
-    <div className="stake-item rounded-[20px] flex flex-col items-center p-[25px] bg-white relative">
+    <div className="stake-item rounded-[20px] flex flex-col items-center p-[25px] bg-white relative" data-aos="fade-up">
       <div className="icon-more">
         <MemoMore className="absolute top-[10px] right-[15px] cursor-pointer " />
         <div className="menu text-[#808080] absolute p-4 bg-white right-[10px] invisible">
@@ -35,12 +35,14 @@ const StackItem = ({ data }: any) => {
               </a>
             </div>
           )}
-          {projectTg && <div className="cursor-pointer">
-            <MemoTelegram className="w-[20px]" />
-            <a href={projectTg} target="_blank" className="ml-1">
-              Telegram
-            </a>
-          </div>}
+          {projectTg && (
+            <div className="cursor-pointer">
+              <MemoTelegram className="w-[20px]" />
+              <a href={projectTg} target="_blank" className="ml-1">
+                Telegram
+              </a>
+            </div>
+          )}
         </div>
       </div>
 
@@ -49,10 +51,9 @@ const StackItem = ({ data }: any) => {
         <span className="font-light">APR:</span>
         <span className="font-medium"> {(nominal * 100)?.toFixed(2)}%</span>
       </div>
-      <a href={linkStake} target="_blank" className="bg-gradient-to-r p-[1px] rounded-full from-[#B1891D] to-[#EFC659] text-[#B1891D]">
-        <div className="p-1 bg-white rounded-full py-[7px] px-[25px] hover:text-[white] hover:bg-gradient-to-r from-[#B1891D] to-[#EFC659] text-[#B1891D] cursor-pointer">
-          STAKE NOW
-        </div>
+      <a href={linkStake} target="_blank">
+        {/* <div className="stake-btn p-1 bg-white rounded-full py-[7px] px-[25px] hover:text-[white] hover:bg-gradient-to-r from-[#B1891D] to-[#EFC659] text-[#B1891D] cursor-pointer"> */}
+        <div className="stake-btn">STAKE NOW</div>
       </a>
     </div>
   );

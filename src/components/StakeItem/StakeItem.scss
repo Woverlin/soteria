@@ -1,17 +1,92 @@
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
 .stake-item {
-    .menu{
+    .menu {
         box-shadow: 4px 4px 20px 1px #888888;
         border-radius: 12px;
-        > div{
+
+        >div {
             @apply flex flex-row items-center mb-[10px] font-light cursor-pointer;
-            &:last-child{
+
+            &:last-child {
                 margin-bottom: 0;
             }
         }
     }
+
     .icon-more:hover {
         .menu {
             visibility: visible
         }
+    }
+
+    .stake-btn {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        position: relative;
+        height: 40px;
+        width: 200px;
+        margin: 0 20px;
+        border-radius: 50px;
+        border: none;
+        outline: none;
+        border: 1px solid #090c20;
+        color: #090c20;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 0.5s;
+    }
+
+    .stake-btn:hover {
+        background: linear-gradient(90deg, #0100EC, #FB36F4, #00FFED, #9D00C6, #0100EC);
+        background-size: 400%;
+    }
+
+    background-size: 400%;
+}
+
+.stake-btn:before {
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.stake-btn:hover:before {
+    opacity: 1;
+    z-index: -1;
+}
+
+.stake-btn:hover {
+    z-index: 1;
+    animation: glow 8s linear infinite;
+}
+
+@keyframes glow {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
     }
 }

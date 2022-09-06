@@ -12,7 +12,7 @@ const BenefitItem = ({
   description: ReactNode;
 }) => {
   return (
-    <div className={`benefit-item ${className}`}>
+    <div className={`benefit-item ${className}`} data-aos="fade-up">
     <img className="benefit-item__icon" src={icon} />
       <div className="benefit-item__header">{header}</div>
       <div className="benefit-item__description">{description}</div>
