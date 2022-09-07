@@ -58,7 +58,7 @@ function App() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      delay:300
+      delay:100
     });
     window.addEventListener("scroll", onScroll);
   }, []);
@@ -78,10 +78,7 @@ function App() {
     { icon: require("./assets/portfolio/12.png") },
   ];
 
-  const bgTopHeight = document.getElementById("bg-top")?.clientHeight;
-
-  console.log("onLoadingImage || loadingLogo", onLoadingImage || loadingLogo);
-  
+  const bgTopHeight = document.getElementById("bg-top")?.clientHeight;  
 
   return (
     <>
@@ -159,7 +156,7 @@ function App() {
                 />
                 <div
                   className="z-10 flex flex-col items-center top-[100px] relative top-menu"
-                  data-aos="fade-up">
+                  >
                   <div
                     className="text-center text-[32px] cursor-pointer"
                     onClick={() => scrollTo(homeRef)}>

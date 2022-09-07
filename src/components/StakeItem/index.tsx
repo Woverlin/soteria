@@ -46,7 +46,7 @@ const StackItem = ({ data }: any) => {
         </div>
       </div>
 
-      <img src={logo} className="w-[80px] mb-[15px]" />
+      <img src={logo} className="w-[80px] mb-[15px] h-[80px] object-contain" />
       <div className="text-[#070C20] text-[20px] pb-[15px]">
         <span className="font-light">APR:</span>
         <span className="font-medium"> {(nominal * 100)?.toFixed(2)}%</span>
